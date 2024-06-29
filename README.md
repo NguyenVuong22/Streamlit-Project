@@ -21,9 +21,10 @@ python -m venv venv .\venv\Scripts\activate
 ```bash
 pip install streamlit
 ```
-# 4. Open file "levenshtein_distance.py" in Visual Studio Code and write command:
+## 4. Open file "levenshtein_distance.py" in Visual Studio Code and write command:
 
 ```bash
 
 streamlit run levenshtein_distance.py
 ```
+## Starting the Application

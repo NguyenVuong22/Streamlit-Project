@@ -3,8 +3,8 @@ import numpy as np
 from PIL import Image
 import streamlit as st
 
-MODEL = "C:/Users/Hanh/Downloads/model/MobileNetSSD_deploy.caffemodel"
-PROTOTXT = "C:/Users/Hanh/Downloads/model/MobileNetSSD_deploy.prototxt.txt"
+MODEL = "model/MobileNetSSD_deploy.caffemodel"
+PROTOTXT = "model/MobileNetSSD_deploy.prototxt.txt"
 
 
 def process_image(image):
@@ -29,10 +29,10 @@ def annotate_image(
             # extract the index of the class label from the `detections`,
             # then compute the (x, y)-coordinates of the bounding box for
             # the object
-            idx = int(detections[0, 0, i, 1])
+            # idx = int(detections[0, 0, i, 1])
             box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
-            (startX, startY, endX, endY) = box.astype("int")
-            cv2.rectangle(image, (startX, startY), (endX, endY), 70, 2)
+            (start_x, start_y, end_x, end_y) = box.astype("int")
+            cv2.rectangle(image, (start_x, start_y), (end_x, end_y), 70, 2)
     return image
 
 
